@@ -16,6 +16,7 @@
 		C37F9EE027260AF300D19800 /* FerrisChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37F9EDF27260AF300D19800 /* FerrisChatTests.swift */; };
 		C37F9EEA27260AF300D19800 /* FerrisChatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37F9EE927260AF300D19800 /* FerrisChatUITests.swift */; };
 		C37F9EEC27260AF300D19800 /* FerrisChatUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37F9EEB27260AF300D19800 /* FerrisChatUITestsLaunchTests.swift */; };
+		C37F9EFA2726120F00D19800 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = C37F9EF92726120F00D19800 /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C37F9EFA2726120F00D19800 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,6 +151,9 @@
 			dependencies = (
 			);
 			name = FerrisChat;
+			packageProductDependencies = (
+				C37F9EF92726120F00D19800 /* Alamofire */,
+			);
 			productName = FerrisChat;
 			productReference = C37F9EC627260AF200D19800 /* FerrisChat.app */;
 			productType = "com.apple.product-type.application";
@@ -221,6 +226,9 @@
 				Base,
 			);
 			mainGroup = C37F9EBD27260AF200D19800;
+			packageReferences = (
+				C37F9EF82726120F00D19800 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = C37F9EC727260AF200D19800 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -615,6 +623,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C37F9EF82726120F00D19800 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C37F9EF92726120F00D19800 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C37F9EF82726120F00D19800 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		C37F9ED427260AF300D19800 /* FerrisChat.xcdatamodeld */ = {
