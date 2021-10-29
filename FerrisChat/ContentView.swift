@@ -8,6 +8,7 @@
 import SwiftUI
 import CoreData
 import Alamofire
+import SwiftyJSON
 
 func login(email: String, password: String, completion: @escaping (Result<Any, AFError>) -> Void) {
     let auth_headers: HTTPHeaders = [
@@ -18,7 +19,9 @@ func login(email: String, password: String, completion: @escaping (Result<Any, A
     AF.request(api_root + "auth", method: .post, headers: auth_headers).validate().responseJSON { response in
         switch response.result {
         case .success(let value as [String: Any]):
-            completion(Result<Any, AFError>.success(value))
+
+            let json = JSON(response)
+            completion(json)
 
         case .failure(let error):
             completion(Result<Any, AFError>.failure(error))
@@ -182,7 +185,7 @@ struct SignUpView: View {
 
                     case .success(let value):
                         print(value)
-                        ferrischat_response = "Created account with discriminator \(value["discriminator"])"
+                        ferrischat_response = "Created account with discriminator \(result)"
                     }
                 }
             }

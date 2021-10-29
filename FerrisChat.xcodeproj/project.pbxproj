@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5E3962A72DA11C0586058694 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 5E39673544DA499252A8EE45 /* .gitignore */; };
+		C37D49CC272B90BE005E6358 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = C37D49CB272B90BE005E6358 /* SwiftyJSON */; };
 		C37F9ECA27260AF200D19800 /* FerrisChatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37F9EC927260AF200D19800 /* FerrisChatApp.swift */; };
 		C37F9ECC27260AF200D19800 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37F9ECB27260AF200D19800 /* ContentView.swift */; };
 		C37F9ECE27260AF300D19800 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C37F9ECD27260AF300D19800 /* Assets.xcassets */; };
@@ -58,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C37D49CC272B90BE005E6358 /* SwiftyJSON in Frameworks */,
 				C37F9EFA2726120F00D19800 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -156,6 +158,7 @@
 			name = FerrisChat;
 			packageProductDependencies = (
 				C37F9EF92726120F00D19800 /* Alamofire */,
+				C37D49CB272B90BE005E6358 /* SwiftyJSON */,
 			);
 			productName = FerrisChat;
 			productReference = C37F9EC627260AF200D19800 /* FerrisChat.app */;
@@ -230,7 +233,8 @@
 			);
 			mainGroup = C37F9EBD27260AF200D19800;
 			packageReferences = (
-				C37F9EF82726120F00D19800 /* XCRemoteSwiftPackageReference "Alamofire.git" */,
+				C37F9EF82726120F00D19800 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				C37D49CA272B90BE005E6358 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 			);
 			productRefGroup = C37F9EC727260AF200D19800 /* Products */;
 			projectDirPath = "";
@@ -629,7 +633,15 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		C37F9EF82726120F00D19800 /* XCRemoteSwiftPackageReference "Alamofire.git" */ = {
+		C37D49CA272B90BE005E6358 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		C37F9EF82726120F00D19800 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
@@ -640,9 +652,14 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		C37D49CB272B90BE005E6358 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C37D49CA272B90BE005E6358 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
 		C37F9EF92726120F00D19800 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C37F9EF82726120F00D19800 /* XCRemoteSwiftPackageReference "Alamofire.git" */;
+			package = C37F9EF82726120F00D19800 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
