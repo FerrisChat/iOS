@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-let api_root: String = "https://ferris.chat/api/v0/"
+let api_root: String = "https://api.ferris.chat/v0/"
 
 @main
 struct FerrisChatApp: App {
