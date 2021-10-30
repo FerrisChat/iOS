@@ -2,7 +2,7 @@
 //  FerrisChatUITestsLaunchTests.swift
 //  FerrisChatUITests
 //
-//  Created by Grant Hutchinson on 10/24/21.
+//  Created by valkyrie_pilot on 10/24/21.
 //
 
 import XCTest
