@@ -2,7 +2,7 @@
 //  Persistence.swift
 //  FerrisChat
 //
-//  Created by valkyrie_pilot on 10/24/21.
+//  Created by Grant Hutchinson on 10/24/21.
 //
 
 import CoreData
