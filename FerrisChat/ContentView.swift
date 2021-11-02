@@ -120,10 +120,10 @@ struct LogInView: View {
                         ferrischat_response = "An unexpected error occurred!";
 
                     }
-                    print(error)
+                    debugPrint(error)
 
                 case .success(let value):
-                    print(value)
+                    debugPrint(value)
                     ferrischat_response = "Logged in! Going further is WIP."
                 }
             }
@@ -178,14 +178,17 @@ struct SignUpView: View {
                         case 500:
                             ferrischat_response = "FerrisChat failure!";
                             break;
+                        case 409:
+                            ferrischat_response = "Email already registered."
+                            break;
                         default:
                             ferrischat_response = "An unexpected error occurred!";
 
                         }
-                        print(error)
+                        debugPrint(error)
 
                     case .success(let json):
-                        print(json)
+                        debugPrint(json)
                         ferrischat_response = "Created account \(json["name"])#\(json["discriminator"]), ID \(json["id"])"
                         ferrischat_response_color = .green
                     }
@@ -193,7 +196,9 @@ struct SignUpView: View {
             }
             Text(ferrischat_response)
                     .foregroundColor(ferrischat_response_color)
-                    .padding(5)
+                    .padding(20)
+                    .multilineTextAlignment(.center)
+            .font(Font.system(size: 15))
         }
                 .font(Font.system(size: 30))
     }
