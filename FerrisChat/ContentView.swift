@@ -18,21 +18,19 @@ func login(email: String, password: String, completion: @escaping (Result<Any, A
     ]
     AF.request(api_root + "auth", method: .post, headers: auth_headers).validate().responseJSON { response in
         switch response.result {
-        case .success(let value as [String: Any]):
+        case .success(let value):
 
-            let json = JSON(response)
-            completion(json)
+            let json = JSON(value)
+            completion(Result<Any, AFError>.success(json))
 
         case .failure(let error):
             completion(Result<Any, AFError>.failure(error))
 
-        default:
-            fatalError("received non-dictionary JSON response")
         }
     }
 }
 
-func signup(username: String, email: String, password: String, completion: @escaping (Result<Any, AFError>) -> Void) {
+func signup(username: String, email: String, password: String, completion: @escaping (Result<JSON, AFError>) -> Void) {
     let create_account_json: [String: String] = [
         "username": username,
         "email": email,
@@ -42,10 +40,11 @@ func signup(username: String, email: String, password: String, completion: @esca
         debugPrint(response.debugDescription)
         switch response.result {
         case .success(let value as [String: Any]):
-            completion(Result<Any, AFError>.success(value))
+            let json = JSON(value)
+            completion(Result<JSON, AFError>.success(json))
 
         case .failure(let error):
-            completion(Result<Any, AFError>.failure(error))
+            completion(Result<JSON, AFError>.failure(error))
 
         default:
             fatalError("received non-dictionary JSON response")
@@ -143,6 +142,7 @@ struct SignUpView: View {
     @State private var ferrischat_password: String = ""
     @State private var ferrischat_password_encore: String = ""
     @State private var ferrischat_response: String = ""
+    @State private var ferrischat_response_color: Color = .red
     var body: some View {
         Group {
             TextField(" Username ", text: $ferrischat_username) // these spaces are a nasty hack to make the borders look better
@@ -170,7 +170,8 @@ struct SignUpView: View {
                     ferrischat_response = "Passwords are not the same."
                     return
                 }
-                signup(username: ferrischat_username, email: ferrischat_email, password: ferrischat_password) { result in
+                ferrischat_response = "Loading...."
+                signup(username: ferrischat_username, email: ferrischat_email, password: ferrischat_password, completion: { result in
                     switch result {
                     case .failure(let error):
                         switch error.responseCode {
@@ -183,15 +184,17 @@ struct SignUpView: View {
                         }
                         print(error)
 
-                    case .success(let value):
-                        print(value)
-                        ferrischat_response = "Created account with discriminator \(result)"
+                    case .success(let json):
+                        print(json)
+                        ferrischat_response = "Created account \(json["name"])#\(json["discriminator"]), ID \(json["id"])"
+                        ferrischat_response_color = .green
                     }
-                }
+                })
             }
             Text(ferrischat_response)
-            .foregroundColor(.red)
+                    .foregroundColor(ferrischat_response_color)
+                    .padding(5)
         }
-        .font(Font.system(size: 30))
+                .font(Font.system(size: 30))
     }
 }
