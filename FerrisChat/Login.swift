@@ -16,51 +16,10 @@
 
 
 import SwiftUI
-import CoreData
+import KeychainAccess
 import Alamofire
 import SwiftyJSON
 
-func login(email: String, password: String, completion: @escaping (Result<Any, AFError>) -> Void) {
-    let auth_headers: HTTPHeaders = [
-        "Email": email,
-        "Password": password,
-        "Content-Type": "application/json"
-    ]
-    AF.request(api_root + "auth", method: .post, headers: auth_headers).validate().responseJSON { response in
-        switch response.result {
-        case .success(let value):
-
-            let json = JSON(value)
-            completion(Result<Any, AFError>.success(json))
-
-        case .failure(let error):
-            completion(Result<Any, AFError>.failure(error))
-
-        }
-    }
-}
-
-func signup(username: String, email: String, password: String, completion: @escaping (Result<JSON, AFError>) -> Void) {
-    let create_account_json: [String: String] = [
-        "username": username,
-        "email": email,
-        "password": password
-    ]
-    AF.request(api_root + "users", method: .post, parameters: create_account_json, encoder: JSONParameterEncoder.default).validate().responseJSON { response in
-        debugPrint(response.debugDescription)
-        switch response.result {
-        case .success(let value as [String: Any]):
-            let json = JSON(value)
-            completion(Result<JSON, AFError>.success(json))
-
-        case .failure(let error):
-            completion(Result<JSON, AFError>.failure(error))
-
-        default:
-            fatalError("received non-dictionary JSON response")
-        }
-    }
-}
 
 struct ContentView: View {
     @State var showLoginView = false
@@ -104,40 +63,46 @@ struct LogInView: View {
     @State private var ferrischat_password: String = ""
     @State private var ferrischat_response: String = ""
     var body: some View {
-        TextField(" FerrisChat Email ", text: $ferrischat_email) // these spaces are a nasty hack to make the borders look better
-                .fixedSize()
-                .border(Color.gray)
-                .autocapitalization(.none)
-                .disableAutocorrection(true)
-        SecureField(" FerrisChat Password ", text: $ferrischat_password)
-                .fixedSize()
-                .border(Color.gray)
-                .autocapitalization(.none)
-                .disableAutocorrection(true)
+        Group {
+            TextField(" FerrisChat Email ", text: $ferrischat_email) // these spaces are a nasty hack to make the borders look better
+                    .fixedSize()
+                    .border(Color.gray)
+                    .autocapitalization(.none)
+                    .disableAutocorrection(true)
+            SecureField(" FerrisChat Password ", text: $ferrischat_password)
+                    .fixedSize()
+                    .border(Color.gray)
+                    .autocapitalization(.none)
+                    .disableAutocorrection(true)
 
-        Button("Login") {
-            login(email: ferrischat_email, password: ferrischat_password) { result in
-                switch result {
-                case .failure(let error):
-                    switch error.responseCode {
-                    case 401:
-                        ferrischat_response = "Username or password incorrect!";
-                        break;
-                    case 500:
-                        ferrischat_response = "FerrisChat failure!";
-                        break;
-                    default:
-                        ferrischat_response = "An unexpected error occurred!";
+            Button("Login") {
+                login(email: ferrischat_email, password: ferrischat_password) { result in
+                    switch result {
+                    case .failure(let error):
+                        switch error.responseCode {
+                        case 401:
+                            ferrischat_response = "Username or password incorrect!";
+                            break;
+                        case 500:
+                            ferrischat_response = "FerrisChat failure!";
+                            break;
+                        default:
+                            ferrischat_response = "An unexpected error occurred!";
 
+                        }
+                        debugPrint(error)
+
+                    case .success(let reply):
+                        debugPrint(reply)
+                        let keychain = Keychain(service: "chat.ferris.iOS")
+                        keychain["FerrisChatToken"] = token
+                        ferrischat_response = "Logged in! Going further is WIP."
                     }
-                    debugPrint(error)
-
-                case .success(let value):
-                    debugPrint(value)
-                    ferrischat_response = "Logged in! Going further is WIP."
                 }
+
             }
         }
+        .font(Font.system(size: 30))
 
         Text(ferrischat_response)
                 .foregroundColor(.red)
@@ -208,7 +173,7 @@ struct SignUpView: View {
                     .foregroundColor(ferrischat_response_color)
                     .padding(20)
                     .multilineTextAlignment(.center)
-            .font(Font.system(size: 15))
+                    .font(Font.system(size: 15))
         }
                 .font(Font.system(size: 30))
     }

@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		5E3962A72DA11C0586058694 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 5E39673544DA499252A8EE45 /* .gitignore */; };
+		5E396B9C4B205DEB52B5A40A /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E396197096F7A7830C5EE05 /* Authentication.swift */; };
+		C3327CD2273DBCC500002F59 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = C3327CD1273DBCC500002F59 /* KeychainAccess */; };
 		C37D49CC272B90BE005E6358 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = C37D49CB272B90BE005E6358 /* SwiftyJSON */; };
 		C37F9ECA27260AF200D19800 /* FerrisChatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37F9EC927260AF200D19800 /* FerrisChatApp.swift */; };
-		C37F9ECC27260AF200D19800 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37F9ECB27260AF200D19800 /* ContentView.swift */; };
+		C37F9ECC27260AF200D19800 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37F9ECB27260AF200D19800 /* Login.swift */; };
 		C37F9ECE27260AF300D19800 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C37F9ECD27260AF300D19800 /* Assets.xcassets */; };
 		C37F9ED127260AF300D19800 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C37F9ED027260AF300D19800 /* Preview Assets.xcassets */; };
-		C37F9ED327260AF300D19800 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37F9ED227260AF300D19800 /* Persistence.swift */; };
 		C37F9ED627260AF300D19800 /* FerrisChat.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C37F9ED427260AF300D19800 /* FerrisChat.xcdatamodeld */; };
 		C37F9EE027260AF300D19800 /* FerrisChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37F9EDF27260AF300D19800 /* FerrisChatTests.swift */; };
 		C37F9EEA27260AF300D19800 /* FerrisChatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37F9EE927260AF300D19800 /* FerrisChatUITests.swift */; };
@@ -39,13 +40,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5E396197096F7A7830C5EE05 /* Authentication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
 		5E39673544DA499252A8EE45 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = file.gitignore; path = .gitignore; sourceTree = "<group>"; };
 		C37F9EC627260AF200D19800 /* FerrisChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FerrisChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C37F9EC927260AF200D19800 /* FerrisChatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FerrisChatApp.swift; sourceTree = "<group>"; };
-		C37F9ECB27260AF200D19800 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C37F9ECB27260AF200D19800 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		C37F9ECD27260AF300D19800 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C37F9ED027260AF300D19800 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		C37F9ED227260AF300D19800 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		C37F9ED527260AF300D19800 /* FerrisChat.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FerrisChat.xcdatamodel; sourceTree = "<group>"; };
 		C37F9EDB27260AF300D19800 /* FerrisChatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FerrisChatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C37F9EDF27260AF300D19800 /* FerrisChatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FerrisChatTests.swift; sourceTree = "<group>"; };
@@ -61,6 +62,7 @@
 			files = (
 				C37D49CC272B90BE005E6358 /* SwiftyJSON in Frameworks */,
 				C37F9EFA2726120F00D19800 /* Alamofire in Frameworks */,
+				C3327CD2273DBCC500002F59 /* KeychainAccess in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,11 +108,11 @@
 			isa = PBXGroup;
 			children = (
 				C37F9EC927260AF200D19800 /* FerrisChatApp.swift */,
-				C37F9ECB27260AF200D19800 /* ContentView.swift */,
+				C37F9ECB27260AF200D19800 /* Login.swift */,
 				C37F9ECD27260AF300D19800 /* Assets.xcassets */,
-				C37F9ED227260AF300D19800 /* Persistence.swift */,
 				C37F9ED427260AF300D19800 /* FerrisChat.xcdatamodeld */,
 				C37F9ECF27260AF300D19800 /* Preview Content */,
+				5E396197096F7A7830C5EE05 /* Authentication.swift */,
 			);
 			path = FerrisChat;
 			sourceTree = "<group>";
@@ -159,6 +161,7 @@
 			packageProductDependencies = (
 				C37F9EF92726120F00D19800 /* Alamofire */,
 				C37D49CB272B90BE005E6358 /* SwiftyJSON */,
+				C3327CD1273DBCC500002F59 /* KeychainAccess */,
 			);
 			productName = FerrisChat;
 			productReference = C37F9EC627260AF200D19800 /* FerrisChat.app */;
@@ -207,8 +210,10 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
+				CLASSPREFIX = iOS;
 				LastSwiftUpdateCheck = 1300;
 				LastUpgradeCheck = 1300;
+				ORGANIZATIONNAME = ferris.chat;
 				TargetAttributes = {
 					C37F9EC527260AF200D19800 = {
 						CreatedOnToolsVersion = 13.0;
@@ -233,8 +238,9 @@
 			);
 			mainGroup = C37F9EBD27260AF200D19800;
 			packageReferences = (
-				C37F9EF82726120F00D19800 /* XCRemoteSwiftPackageReference "Alamofire" */,
-				C37D49CA272B90BE005E6358 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				C37F9EF82726120F00D19800 /* XCRemoteSwiftPackageReference "Alamofire.git" */,
+				C37D49CA272B90BE005E6358 /* XCRemoteSwiftPackageReference "SwiftyJSON.git" */,
+				C3327CD0273DBCC500002F59 /* XCRemoteSwiftPackageReference "KeychainAccess.git" */,
 			);
 			productRefGroup = C37F9EC727260AF200D19800 /* Products */;
 			projectDirPath = "";
@@ -279,10 +285,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C37F9ED327260AF300D19800 /* Persistence.swift in Sources */,
-				C37F9ECC27260AF200D19800 /* ContentView.swift in Sources */,
+				C37F9ECC27260AF200D19800 /* Login.swift in Sources */,
 				C37F9ED627260AF300D19800 /* FerrisChat.xcdatamodeld in Sources */,
 				C37F9ECA27260AF200D19800 /* FerrisChatApp.swift in Sources */,
+				5E396B9C4B205DEB52B5A40A /* Authentication.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -633,7 +639,15 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		C37D49CA272B90BE005E6358 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+		C3327CD0273DBCC500002F59 /* XCRemoteSwiftPackageReference "KeychainAccess.git" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+		C37D49CA272B90BE005E6358 /* XCRemoteSwiftPackageReference "SwiftyJSON.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
 			requirement = {
@@ -641,7 +655,7 @@
 				minimumVersion = 5.0.0;
 			};
 		};
-		C37F9EF82726120F00D19800 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+		C37F9EF82726120F00D19800 /* XCRemoteSwiftPackageReference "Alamofire.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
@@ -652,14 +666,19 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		C3327CD1273DBCC500002F59 /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C3327CD0273DBCC500002F59 /* XCRemoteSwiftPackageReference "KeychainAccess.git" */;
+			productName = KeychainAccess;
+		};
 		C37D49CB272B90BE005E6358 /* SwiftyJSON */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C37D49CA272B90BE005E6358 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			package = C37D49CA272B90BE005E6358 /* XCRemoteSwiftPackageReference "SwiftyJSON.git" */;
 			productName = SwiftyJSON;
 		};
 		C37F9EF92726120F00D19800 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C37F9EF82726120F00D19800 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			package = C37F9EF82726120F00D19800 /* XCRemoteSwiftPackageReference "Alamofire.git" */;
 			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */

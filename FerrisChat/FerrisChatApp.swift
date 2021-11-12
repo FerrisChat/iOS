@@ -17,10 +17,10 @@
 import SwiftUI
 
 let api_root: String = "https://api.ferris.chat/v0/"
+var token: String = ""
 
 @main
 struct FerrisChatApp: App {
-    let persistenceController = PersistenceController.shared
 
     var body: some Scene {
         WindowGroup {
