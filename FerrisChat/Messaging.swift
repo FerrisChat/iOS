@@ -14,18 +14,10 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-import SwiftUI
+import Foundation
+import Starscream
+import Alamofire
 
-let api_root: String = "https://api.ferris.chat/v0/"
-var token: String = ""
+struct Channels: some View {
 
-@main
-struct FerrisChatApp: App {
-@State var isLoggedIn: Bool = false
-    var body: some Scene {
-
-        WindowGroup {
-            ContentView()
-        }
-    }
 }
