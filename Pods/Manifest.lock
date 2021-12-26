@@ -1,11 +1,11 @@
 PODS:
-  - Alamofire (5.4.4)
+  - Alamofire (5.5.0)
   - KeychainSwift (19.0.0)
   - Starscream (4.0.4)
   - SwiftyJSON (5.0.1)
 
 DEPENDENCIES:
-  - Alamofire (~> 5.4)
+  - Alamofire (~> 5.5)
   - KeychainSwift (~> 19.0)
   - Starscream (~> 4.0.0)
   - SwiftyJSON (~> 5.0.1)
@@ -18,11 +18,11 @@ SPEC REPOS:
     - SwiftyJSON
 
 SPEC CHECKSUMS:
-  Alamofire: f3b09a368f1582ab751b3fff5460276e0d2cf5c9
+  Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
   KeychainSwift: a06190cf933ad46b1e0abc3d77d29c06331715c7
   Starscream: 5178aed56b316f13fa3bc55694e583d35dd414d9
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
 
-PODFILE CHECKSUM: c72423bfbe116c6399d0178edb098bfcb4e37690
+PODFILE CHECKSUM: 3c4687d570787c710675d2d03df99f74d76e77fc
 
 COCOAPODS: 1.11.2

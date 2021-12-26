@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0D321B8AE47DFA62F7BD36E6 /* Pods_FerrisChatTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBE4ED58488BFFDA856FF39A /* Pods_FerrisChatTests.framework */; };
-		59C94F1CA1B908D90E7B193A /* Pods_FerrisChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91BE22EF036A6C0E5F198CC3 /* Pods_FerrisChat.framework */; };
 		5E3962A72DA11C0586058694 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 5E39673544DA499252A8EE45 /* .gitignore */; };
 		5E39679CCE72BFFE0EEC131F /* Messaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E39660D62A1F9CBE29C87D4 /* Messaging.swift */; };
 		5E396B9C4B205DEB52B5A40A /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E396197096F7A7830C5EE05 /* Authentication.swift */; };
@@ -17,9 +16,6 @@
 		C37F9ECC27260AF200D19800 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37F9ECB27260AF200D19800 /* Login.swift */; };
 		C37F9ECE27260AF300D19800 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C37F9ECD27260AF300D19800 /* Assets.xcassets */; };
 		C37F9ED127260AF300D19800 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C37F9ED027260AF300D19800 /* Preview Assets.xcassets */; };
-		C37F9EE027260AF300D19800 /* FerrisChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37F9EDF27260AF300D19800 /* FerrisChatTests.swift */; };
-		C37F9EEA27260AF300D19800 /* FerrisChatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37F9EE927260AF300D19800 /* FerrisChatUITests.swift */; };
-		C37F9EEC27260AF300D19800 /* FerrisChatUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37F9EEB27260AF300D19800 /* FerrisChatUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +32,55 @@
 			proxyType = 1;
 			remoteGlobalIDString = C37F9EC527260AF200D19800;
 			remoteInfo = FerrisChat;
+		};
+		C3D0E975277903C0006F5197 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C3D0E96B277903C0006F5197 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5D797E9A5C5782CE845840781FA1CC81;
+			remoteInfo = Alamofire;
+		};
+		C3D0E977277903C0006F5197 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C3D0E96B277903C0006F5197 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9E0FD012ADC3C7179C684035672383E5;
+			remoteInfo = KeychainSwift;
+		};
+		C3D0E979277903C0006F5197 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C3D0E96B277903C0006F5197 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = CB5F65720DE2BA75FCA0D05E5C222B1B;
+			remoteInfo = "Pods-FerrisChat";
+		};
+		C3D0E97B277903C0006F5197 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C3D0E96B277903C0006F5197 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1A014B4359BD1BBB4E39B3DB99317C61;
+			remoteInfo = "Pods-FerrisChat-FerrisChatUITests";
+		};
+		C3D0E97D277903C0006F5197 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C3D0E96B277903C0006F5197 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 503F2F1687766BB79E4117C246398D34;
+			remoteInfo = "Pods-FerrisChatTests";
+		};
+		C3D0E97F277903C0006F5197 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C3D0E96B277903C0006F5197 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 891B2270823847ED23F2ECFC28F935EC;
+			remoteInfo = Starscream;
+		};
+		C3D0E981277903C0006F5197 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C3D0E96B277903C0006F5197 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E23C076BA70925415F490FEDB215DA92;
+			remoteInfo = SwiftyJSON;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -54,10 +99,9 @@
 		C37F9ECD27260AF300D19800 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C37F9ED027260AF300D19800 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C37F9EDB27260AF300D19800 /* FerrisChatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FerrisChatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C37F9EDF27260AF300D19800 /* FerrisChatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FerrisChatTests.swift; sourceTree = "<group>"; };
 		C37F9EE527260AF300D19800 /* FerrisChatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FerrisChatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C37F9EE927260AF300D19800 /* FerrisChatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FerrisChatUITests.swift; sourceTree = "<group>"; };
-		C37F9EEB27260AF300D19800 /* FerrisChatUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FerrisChatUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C3D0E96927790398006F5197 /* Pods */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Pods; sourceTree = "<group>"; };
+		C3D0E96B277903C0006F5197 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = "<group>"; };
 		DBE4ED58488BFFDA856FF39A /* Pods_FerrisChatTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FerrisChatTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E88D2C1BE489B67CFDB1E30C /* Pods-FerrisChatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FerrisChatTests.release.xcconfig"; path = "Target Support Files/Pods-FerrisChatTests/Pods-FerrisChatTests.release.xcconfig"; sourceTree = "<group>"; };
 		F49419304763F72BAD8E5AEE /* Pods_FerrisChat_FerrisChatUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FerrisChat_FerrisChatUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,7 +113,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				59C94F1CA1B908D90E7B193A /* Pods_FerrisChat.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +138,8 @@
 		0D2A20BC7BE5471581942341 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C3D0E96B277903C0006F5197 /* Pods.xcodeproj */,
+				C3D0E96927790398006F5197 /* Pods */,
 				91BE22EF036A6C0E5F198CC3 /* Pods_FerrisChat.framework */,
 				F49419304763F72BAD8E5AEE /* Pods_FerrisChat_FerrisChatUITests.framework */,
 				DBE4ED58488BFFDA856FF39A /* Pods_FerrisChatTests.framework */,
@@ -119,8 +164,6 @@
 			isa = PBXGroup;
 			children = (
 				C37F9EC827260AF200D19800 /* FerrisChat */,
-				C37F9EDE27260AF300D19800 /* FerrisChatTests */,
-				C37F9EE827260AF300D19800 /* FerrisChatUITests */,
 				C37F9EC727260AF200D19800 /* Products */,
 				5E39673544DA499252A8EE45 /* .gitignore */,
 				193774A5EE73F05C140D1DAB /* Pods */,
@@ -159,21 +202,18 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		C37F9EDE27260AF300D19800 /* FerrisChatTests */ = {
+		C3D0E96C277903C0006F5197 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C37F9EDF27260AF300D19800 /* FerrisChatTests.swift */,
+				C3D0E976277903C0006F5197 /* Alamofire */,
+				C3D0E978277903C0006F5197 /* KeychainSwift */,
+				C3D0E97A277903C0006F5197 /* Pods-FerrisChat */,
+				C3D0E97C277903C0006F5197 /* Pods-FerrisChat-FerrisChatUITests */,
+				C3D0E97E277903C0006F5197 /* Pods-FerrisChatTests */,
+				C3D0E980277903C0006F5197 /* Starscream */,
+				C3D0E982277903C0006F5197 /* SwiftyJSON */,
 			);
-			path = FerrisChatTests;
-			sourceTree = "<group>";
-		};
-		C37F9EE827260AF300D19800 /* FerrisChatUITests */ = {
-			isa = PBXGroup;
-			children = (
-				C37F9EE927260AF300D19800 /* FerrisChatUITests.swift */,
-				C37F9EEB27260AF300D19800 /* FerrisChatUITestsLaunchTests.swift */,
-			);
-			path = FerrisChatUITests;
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,8 +234,6 @@
 			dependencies = (
 			);
 			name = FerrisChat;
-			packageProductDependencies = (
-			);
 			productName = FerrisChat;
 			productReference = C37F9EC627260AF200D19800 /* FerrisChat.app */;
 			productType = "com.apple.product-type.application";
@@ -273,10 +311,14 @@
 				Base,
 			);
 			mainGroup = C37F9EBD27260AF200D19800;
-			packageReferences = (
-			);
 			productRefGroup = C37F9EC727260AF200D19800 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = C3D0E96C277903C0006F5197 /* Products */;
+					ProjectRef = C3D0E96B277903C0006F5197 /* Pods.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				C37F9EC527260AF200D19800 /* FerrisChat */,
@@ -285,6 +327,65 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		C3D0E976277903C0006F5197 /* Alamofire */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			name = Alamofire;
+			path = Alamofire.framework;
+			remoteRef = C3D0E975277903C0006F5197 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		C3D0E978277903C0006F5197 /* KeychainSwift */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			name = KeychainSwift;
+			path = KeychainSwift.framework;
+			remoteRef = C3D0E977277903C0006F5197 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		C3D0E97A277903C0006F5197 /* Pods-FerrisChat */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			name = "Pods-FerrisChat";
+			path = Pods_FerrisChat.framework;
+			remoteRef = C3D0E979277903C0006F5197 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		C3D0E97C277903C0006F5197 /* Pods-FerrisChat-FerrisChatUITests */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			name = "Pods-FerrisChat-FerrisChatUITests";
+			path = Pods_FerrisChat_FerrisChatUITests.framework;
+			remoteRef = C3D0E97B277903C0006F5197 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		C3D0E97E277903C0006F5197 /* Pods-FerrisChatTests */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			name = "Pods-FerrisChatTests";
+			path = Pods_FerrisChatTests.framework;
+			remoteRef = C3D0E97D277903C0006F5197 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		C3D0E980277903C0006F5197 /* Starscream */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			name = Starscream;
+			path = Starscream.framework;
+			remoteRef = C3D0E97F277903C0006F5197 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		C3D0E982277903C0006F5197 /* SwiftyJSON */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			name = SwiftyJSON;
+			path = SwiftyJSON.framework;
+			remoteRef = C3D0E981277903C0006F5197 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		C37F9EC427260AF200D19800 /* Resources */ = {
@@ -338,7 +439,7 @@
 		};
 		1FA4EA4C3A23F81B33AF09B3 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputFileListPaths = (
@@ -432,7 +533,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C37F9EE027260AF300D19800 /* FerrisChatTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,8 +540,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C37F9EEA27260AF300D19800 /* FerrisChatUITests.swift in Sources */,
-				C37F9EEC27260AF300D19800 /* FerrisChatUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -583,10 +681,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FerrisChat/Preview Content\"";
-				DEVELOPMENT_TEAM = BFN5N2X83W;
+				DEVELOPMENT_TEAM = 584PFZ43TF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -602,6 +701,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.randomairborne.FerrisChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -614,10 +714,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FerrisChat/Preview Content\"";
-				DEVELOPMENT_TEAM = BFN5N2X83W;
+				DEVELOPMENT_TEAM = 584PFZ43TF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -633,6 +734,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.randomairborne.FerrisChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
