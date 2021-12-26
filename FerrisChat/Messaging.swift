@@ -17,7 +17,4 @@
 import Foundation
 import Starscream
 import Alamofire
-
-struct Channels: some View {
-
-}
+import SwiftUI

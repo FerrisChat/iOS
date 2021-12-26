@@ -16,24 +16,23 @@
 
 import Alamofire
 import SwiftyJSON
-import KeychainAccess
+import KeychainSwift
 
 
-func login(email: String, password: String, completion: @escaping (Result<Any, AFError>) -> Void) {
-    let auth_headers: HTTPHeaders = [
-        "Email": email,
-        "Password": password,
-        "Content-Type": "application/json"
-    ]
-    AF.request(api_root + "auth", method: .post, headers: auth_headers).validate().responseJSON { response in
+func login(email: String, password: String, completion: @escaping (Result<String, AFError>) -> Void) {
+    let auth_data: [String:String] = [
+        "email": email,
+        "password": password,
+]
+    AF.request(api_root + "auth", method: .post, parameters: auth_data, encoding: JSONEncoding.default).validate().responseJSON { response in
         switch response.result {
         case .success(let value):
 
             let json = JSON(value)
-            completion(Result<Any, AFError>.success(json["token"]))
+            completion(Result<String, AFError>.success(json["token"].stringValue))
 
         case .failure(let error):
-            completion(Result<Any, AFError>.failure(error))
+            completion(Result<String, AFError>.failure(error))
 
         }
     }

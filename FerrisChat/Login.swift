@@ -16,18 +16,22 @@
 
 
 import SwiftUI
-import KeychainAccess
 import Alamofire
+import KeychainSwift
 import SwiftyJSON
 
 
 struct ContentView: View {
     @State var showLoginView = false
     @State var showSignUpView = false
+    @State var token = (KeychainSwift().get("Token") ?? "TokenNotFound")
     var body: some View {
         NavigationView {
+
             if #available(iOS 15.0, *) {
                 VStack {
+                    Spacer()
+                    Text("token:" + token) // Prevent app crashing if no token is found
                     Spacer()
                     NavigationLink(destination: LogInView(), isActive: $showLoginView) {
                         Text("Log In")
@@ -42,7 +46,6 @@ struct ContentView: View {
                         .buttonStyle(.borderedProminent)
             } else {
                 VStack {
-
                     NavigationLink(destination: LogInView(), isActive: $showLoginView) {
                         Text("Log In")
                     }
@@ -94,8 +97,8 @@ struct LogInView: View {
 
                     case .success(let reply):
                         debugPrint(reply)
-                        let keychain = Keychain(service: "chat.ferris.iOS")
-                        keychain["FerrisChatToken"] = token
+                        let keychain = KeychainSwift()
+                        keychain.set(reply, forKey: "Token")
                         ferrischat_response = "Logged in! Going further is WIP."
                     }
                 }
