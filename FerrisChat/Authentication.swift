@@ -16,14 +16,13 @@
 
 import Alamofire
 import SwiftyJSON
-import KeychainSwift
 
 
 func login(email: String, password: String, completion: @escaping (Result<String, AFError>) -> Void) {
-    let auth_data: [String:String] = [
+    let auth_data: [String: String] = [
         "email": email,
         "password": password,
-]
+    ]
     AF.request(api_root + "auth", method: .post, parameters: auth_data, encoding: JSONEncoding.default).validate().responseJSON { response in
         switch response.result {
         case .success(let value):

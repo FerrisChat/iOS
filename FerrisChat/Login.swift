@@ -26,36 +26,40 @@ struct ContentView: View {
     @State var showSignUpView = false
     @State var token = (KeychainSwift().get("Token") ?? "TokenNotFound")
     var body: some View {
-        NavigationView {
+        if token == "TokenNotFound" {
+            NavigationView {
 
-            if #available(iOS 15.0, *) {
-                VStack {
-                    Spacer()
-                    Text("token:" + token) // Prevent app crashing if no token is found
-                    Spacer()
-                    NavigationLink(destination: LogInView(), isActive: $showLoginView) {
-                        Text("Log In")
+                if #available(iOS 15.0, *) {
+                    VStack {
+                        Spacer()
+                        Text("token:" + token) // Prevent app crashing if no token is found
+                        Spacer()
+                        NavigationLink(destination: LogInView(), isActive: $showLoginView) {
+                            Text("Log In")
+                        }
+                                .padding(.bottom, 10)
+                        NavigationLink(destination: SignUpView(), isActive: $showSignUpView) {
+                            Text("Sign Up")
+                        }
+                                .padding(.top, 10)
+                        Spacer()
                     }
-                            .padding(.bottom, 10)
-                    NavigationLink(destination: SignUpView(), isActive: $showSignUpView) {
-                        Text("Sign Up")
+                            .buttonStyle(.borderedProminent)
+                } else {
+                    VStack {
+                        NavigationLink(destination: LogInView(), isActive: $showLoginView) {
+                            Text("Log In")
+                        }
+                                .padding(.bottom, 10)
+                        NavigationLink(destination: SignUpView(), isActive: $showSignUpView) {
+                            Text("Sign Up")
+                        }
+                                .padding(.top, 10)
                     }
-                            .padding(.top, 10)
-                    Spacer()
-                }
-                        .buttonStyle(.borderedProminent)
-            } else {
-                VStack {
-                    NavigationLink(destination: LogInView(), isActive: $showLoginView) {
-                        Text("Log In")
-                    }
-                            .padding(.bottom, 10)
-                    NavigationLink(destination: SignUpView(), isActive: $showSignUpView) {
-                        Text("Sign Up")
-                    }
-                            .padding(.top, 10)
                 }
             }
+        } else {
+            MainView(token: $token)
         }
     }
 }
@@ -105,7 +109,7 @@ struct LogInView: View {
 
             }
         }
-        .font(Font.system(size: 30))
+                .font(Font.system(size: 30))
 
         Text(ferrischat_response)
                 .foregroundColor(.red)

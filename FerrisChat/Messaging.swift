@@ -18,3 +18,33 @@ import Foundation
 import Starscream
 import Alamofire
 import SwiftUI
+import KeychainSwift
+
+struct MainView: View {
+    @Binding var token: String
+    var ferrischat_response: String
+    init() {
+        get_me(token: token) { result in
+            switch result {
+            case .failure(let error):
+                switch error.responseCode {
+                case 500:
+                    ferrischat_response = "FerrisChat failure!";
+                    break;
+                default:
+                    ferrischat_response = "An unexpected error occurred!";
+
+                }
+                debugPrint(error)
+
+            case .success(let json):
+                debugPrint(json)
+                ferrischat_response = "ha worky"//"Created account \(json["name"])#\(json["discriminator"]), ID \(json["id_string"])"
+            }
+        }
+    }
+    var body: some View {
+
+        Text(ferrischat_response)
+    }
+}

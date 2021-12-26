@@ -21,7 +21,6 @@ var token: String = ""
 
 @main
 struct FerrisChatApp: App {
-@State var isLoggedIn: Bool = false
     var body: some Scene {
 
         WindowGroup {

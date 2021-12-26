@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0D321B8AE47DFA62F7BD36E6 /* Pods_FerrisChatTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBE4ED58488BFFDA856FF39A /* Pods_FerrisChatTests.framework */; };
+		5E396085DC530CAF5B96305E /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E396F61A6E5630F799403B7 /* Utilities.swift */; };
 		5E3962A72DA11C0586058694 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 5E39673544DA499252A8EE45 /* .gitignore */; };
 		5E39679CCE72BFFE0EEC131F /* Messaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E39660D62A1F9CBE29C87D4 /* Messaging.swift */; };
 		5E396B9C4B205DEB52B5A40A /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E396197096F7A7830C5EE05 /* Authentication.swift */; };
@@ -90,6 +91,7 @@
 		5E396197096F7A7830C5EE05 /* Authentication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
 		5E39660D62A1F9CBE29C87D4 /* Messaging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Messaging.swift; sourceTree = "<group>"; };
 		5E39673544DA499252A8EE45 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = file.gitignore; path = .gitignore; sourceTree = "<group>"; };
+		5E396F61A6E5630F799403B7 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		6012CEDDF2E52F9A387663BE /* Pods-FerrisChat-FerrisChatUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FerrisChat-FerrisChatUITests.release.xcconfig"; path = "Target Support Files/Pods-FerrisChat-FerrisChatUITests/Pods-FerrisChat-FerrisChatUITests.release.xcconfig"; sourceTree = "<group>"; };
 		91BE22EF036A6C0E5F198CC3 /* Pods_FerrisChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FerrisChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		94A2EE6BE33A28C1EFB9E32C /* Pods-FerrisChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FerrisChat.release.xcconfig"; path = "Target Support Files/Pods-FerrisChat/Pods-FerrisChat.release.xcconfig"; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 				C37F9ECF27260AF300D19800 /* Preview Content */,
 				5E396197096F7A7830C5EE05 /* Authentication.swift */,
 				5E39660D62A1F9CBE29C87D4 /* Messaging.swift */,
+				5E396F61A6E5630F799403B7 /* Utilities.swift */,
 			);
 			path = FerrisChat;
 			sourceTree = "<group>";
@@ -526,6 +529,7 @@
 				C37F9ECA27260AF200D19800 /* FerrisChatApp.swift in Sources */,
 				5E396B9C4B205DEB52B5A40A /* Authentication.swift in Sources */,
 				5E39679CCE72BFFE0EEC131F /* Messaging.swift in Sources */,
+				5E396085DC530CAF5B96305E /* Utilities.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
