@@ -21,30 +21,31 @@ import SwiftUI
 import KeychainSwift
 
 struct MainView: View {
-    @Binding var token: String
-    var ferrischat_response: String
-    init() {
+    @State var token: String
+    @State private var userInfo: String = ""
+    var body: some View {
         get_me(token: token) { result in
+            debugPrint(result)
             switch result {
             case .failure(let error):
                 switch error.responseCode {
+                case 401:
+                    KeychainSwift().delete("Token")
+                    break;
                 case 500:
-                    ferrischat_response = "FerrisChat failure!";
+                    userInfo = "FerrisChat failure!"
                     break;
                 default:
-                    ferrischat_response = "An unexpected error occurred!";
+                    userInfo = "An unexpected error (\(String(error.responseCode ?? 0))+) occurred!";
 
                 }
                 debugPrint(error)
 
             case .success(let json):
                 debugPrint(json)
-                ferrischat_response = "ha worky"//"Created account \(json["name"])#\(json["discriminator"]), ID \(json["id_string"])"
+                userInfo = "Welcome \(json["name"].stringValue)#\(String(format: "%04d", json["discriminator"].int16Value)) "
             }
         }
-    }
-    var body: some View {
-
-        Text(ferrischat_response)
+        return Text(userInfo)
     }
 }

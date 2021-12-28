@@ -21,7 +21,7 @@ import KeychainSwift
 import SwiftyJSON
 
 
-struct ContentView: View {
+struct AuthView: View {
     @State var showLoginView = false
     @State var showSignUpView = false
     @State var token = (KeychainSwift().get("Token") ?? "TokenNotFound")
@@ -59,7 +59,7 @@ struct ContentView: View {
                 }
             }
         } else {
-            MainView(token: $token)
+            MainView(token: token)
         }
     }
 }
@@ -83,6 +83,7 @@ struct LogInView: View {
                     .disableAutocorrection(true)
 
             Button("Login") {
+                ferrischat_response = ""
                 login(email: ferrischat_email, password: ferrischat_password) { result in
                     switch result {
                     case .failure(let error):
@@ -103,7 +104,7 @@ struct LogInView: View {
                         debugPrint(reply)
                         let keychain = KeychainSwift()
                         keychain.set(reply, forKey: "Token")
-                        ferrischat_response = "Logged in! Going further is WIP."
+                        MainView(token: reply)
                     }
                 }
 

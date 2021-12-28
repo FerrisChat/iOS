@@ -7,17 +7,15 @@ import Alamofire
 import SwiftyJSON
 
 
-var auth_headers: HTTPHeaders = ["Authorization": token]
-func get_me(token: String, completion: @escaping (Result<String, AFError>) -> Void) {
-    AF.request(api_root + "auth", method: .get, headers: auth_headers).validate().responseJSON { response in
+func get_me(token: String, completion: @escaping (Result<JSON, AFError>) -> Void) {
+    let auth_headers: HTTPHeaders = ["Authorization": token]
+    AF.request(api_root + "users/me", method: .get, headers: auth_headers).validate().responseJSON { response in
         switch response.result {
         case .success(let value):
-
-            let json = JSON(value)
-            completion(Result<String, AFError>.success(json["id_string"].stringValue))
+            completion(Result<JSON, AFError>.success(JSON(response.data)))
 
         case .failure(let error):
-            completion(Result<String, AFError>.failure(error))
+            completion(Result<JSON, AFError>.failure(error))
 
         }
     }
